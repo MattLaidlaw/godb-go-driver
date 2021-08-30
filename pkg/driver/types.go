@@ -1,28 +1,27 @@
 package driver
 
-type Message struct {
-	Payload interface{}
+type KeyType = string
+type ValType = string
+
+type SetRequest struct {
+	Key KeyType
+	Val ValType
 }
 
-type SetCommand struct {
-	Key string
-	Value interface{}
+type GetRequest struct {
+	Key KeyType
 }
 
-type GetCommand struct {
-	Key string
-}
-
-type DelCommand struct {
-	Key string
-}
-
-type ExitCommand struct {
-
+type DelRequest struct {
+	Key KeyType
 }
 
 type SetResult struct {
 	InsertedCount int
+}
+
+type GetResult struct {
+	Val ValType
 }
 
 type DelResult struct {

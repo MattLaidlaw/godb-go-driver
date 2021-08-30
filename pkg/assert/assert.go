@@ -1,0 +1,5 @@
+package assert
+
+func ExpectEq() {
+
+}
