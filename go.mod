@@ -1,3 +1,3 @@
-module github.com/MattLaidlaw/godb-go-driver
+module github.com/MattLaidlaw/GoDB-Go-Driver
 
 go 1.17
