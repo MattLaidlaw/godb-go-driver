@@ -1,7 +1,7 @@
 package driver
 
 import (
-	"github.com/MattLaidlaw/godb-go-driver/pkg/assert"
+	"github.com/MattLaidlaw/GoDB-Go-Driver/pkg/assert"
 	"testing"
 )
 
