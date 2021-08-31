@@ -1,6 +1,5 @@
 # godb-go-driver
-A [GoDB](https://github.com/MattLaidlaw/godb) client for the Go language. The *godb-go-driver* module supplies the *driver* package which defines a GoDB client.\
-This client can be used in Go programs to interact with a running GoDB server.
+A [GoDB](https://github.com/MattLaidlaw/godb) client for the Go language. The *godb-go-driver* module supplies the *driver* package which defines a GoDB client. This client can be used in Go programs to interact with a running GoDB server.
 
 # Requirements
 * Go 1.17
