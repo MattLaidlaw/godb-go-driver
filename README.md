@@ -6,12 +6,12 @@ This client can be used in Go programs to interact with a running GoDB server.
 * Go 1.17
 
 # Install
-```go get -u github.com/MattLaidlaw/godb-go-driver```
+```go get github.com/MattLaidlaw/GoDB-Go-Driver@0cc1e1b```
 
 # Usage
 ## Creating a GoDB client
 ```
-import "github.com/MattLaidlaw/godb-go-driver"
+import "github.com/MattLaidlaw/GoDB-Go-Driver/pkg/driver"
 
 ...
 
