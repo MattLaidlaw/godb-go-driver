@@ -3,7 +3,7 @@ A [GoDB](https://github.com/MattLaidlaw/godb) client for the Go language. The *g
 This client can be used in Go programs to interact with a running GoDB server.
 
 # Requirements
-* Go 1.16
+* Go 1.17
 
 # Install
 ```go get github.com/MattLaidlaw/GoDB-Go-Driver@0cc1e1b```
