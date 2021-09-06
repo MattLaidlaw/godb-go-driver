@@ -15,35 +15,39 @@ The below example shows the creation of a GoDB client and the possible methods i
 package main
 
 import (
-  "github.com/MattLaidlaw/GoDB-Go-Driver/pkg/driver"
-  "log"
+	"fmt"
+	"github.com/MattLaidlaw/godb-go-driver/pkg/driver"
+	"log"
 )
 
 func main() {
 
-  // create a godb client
-  client, err := driver.NewClient("localhost:6342")
-  if err != nil {
-    log.Fatalln(err)
-  }
-  
-  // set a key-value pair in the database
-  insertedCount, err := client.Set("key", "godb")  // expect insertedCount = 1
-  if err != nil {
-    log.Println(err)
-  }
-  
-  // get a key-value pair by key
-  value, err := client.Get("key")  // expect value = "godb"
-  if err != nil {
-    log.Println(err)
-  }
-  
-  // delete a key-value pair by key
-  deletedCount, err := client.Del("key")  // expect deletedCount = 1
-  if err != nil {
-    log.Println(err)
-  }
-  
+	// create a godb client
+	client, err := driver.NewClient("localhost:6342")
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	// set a key-value pair in the database
+	insertedCount, err := client.Set("key", "godb")
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(insertedCount)  // expect insertedCount = 1
+
+	// get a key-value pair by key
+	value, err := client.Get("key")
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(value)  // expect value = "godb"
+
+	// delete a key-value pair by key
+	deletedCount, err := client.Del("key")
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(deletedCount)  // expect deletedCount = 1
+
 }
 ```
