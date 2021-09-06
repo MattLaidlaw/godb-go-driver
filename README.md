@@ -1,4 +1,4 @@
-# godb-go-driver
+# GoDB-Go-Driver
 A [GoDB](https://github.com/MattLaidlaw/godb) client for the Go language. This package allows a Go program to interact with a GoDB server via TCP connection.
 
 ## Requirements
