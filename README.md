@@ -1,32 +1,47 @@
 # godb-go-driver
-A [GoDB](https://github.com/MattLaidlaw/godb) client for the Go language. The *godb-go-driver* module supplies the *driver* package which defines a GoDB client. This client can be used in Go programs to interact with a running GoDB server.
+A [GoDB](https://github.com/MattLaidlaw/godb) client for the Go language. This package allows a Go program to interact with a GoDB server via TCP connection.
 
-# Requirements
+## Requirements
 * Go 1.17
 
-# Install
-```go get github.com/MattLaidlaw/GoDB-Go-Driver@0cc1e1b```
-
-# Usage
-## Creating a GoDB client
+## Install
 ```
-import "github.com/MattLaidlaw/GoDB-Go-Driver/pkg/driver"
-
-...
-
-client, err := driver.NewClient("localhost:6342")
+go get github.com/MattLaidlaw/GoDB-Go-Driver@v1.0.0
 ```
 
-## Supported methods
+## Usage
+The below example shows the creation of a GoDB client and the possible methods it can perform.
+```go
+import (
+  "github.com/MattLaidlaw/GoDB-Go-Driver/pkg/driver"
+  "log"
+)
 
-### Client.Set
-Inserts a new key-value pair into the database. Returns the count of inserted/replaced items.\
-```insertedCount, err := client.Set("key", "val")```\
+func main() {
 
-### Client.Get
-Returns the value that matches "key" in the database. This may be an empty string if the key does not exist.\
-```value, err := client.Get("key")```
-
-### Client.Del
-Deletes the item that matches "key" in the database and returns the count of deleted items. If no such element exists, nothing is deleted, and a count of zero is returned.\
-```deletedCount, err := client.Del("key")```
+  // create a godb client
+  client, err := driver.NewClient("localhost:6342")
+  if err != nil {
+    log.Fatalln(err)
+  }
+  
+  // set a key-value pair in the database
+  insertedCount, err := client.Set("key", "godb")  // expect insertedCount = 1
+  if err != nil {
+    log.Println(err)
+  }
+  
+  // get a key-value pair by key
+  value, err := client.Get("key")  // expect value = "godb"
+  if err != nil {
+    log.Println(err)
+  }
+  
+  // delete a key-value pair by key
+  deletedCount, err := client.Del("key")  // expect deletedCount = 1
+  if err != nil {
+    log.Println(err)
+  }
+  
+}
+```
