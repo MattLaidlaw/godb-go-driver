@@ -12,6 +12,8 @@ go get github.com/MattLaidlaw/GoDB-Go-Driver@v1.0.0
 ## Usage
 The below example shows the creation of a GoDB client and the possible methods it can perform.
 ```go
+package main
+
 import (
   "github.com/MattLaidlaw/GoDB-Go-Driver/pkg/driver"
   "log"
